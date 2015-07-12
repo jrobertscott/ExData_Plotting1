@@ -3,7 +3,8 @@ data1 <-data[, c(1,3)]
 data1$Date2 <-as.Date(data1$Date, "%d/%m/%Y")
 data2 <-subset(data1, data1$Date2 == "2007-02-01" | data1$Date2 == "2007-02-02")
 quartz()
+png(file="plot1.png")
 hist(as.numeric(paste(data2$Global_active_power)), col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
-
+dev.off()
 
 
